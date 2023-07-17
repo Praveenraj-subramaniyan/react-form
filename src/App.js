@@ -70,6 +70,27 @@ function App() {
           />
           <p>{errors.email?.message}</p>
 
+          <label>Mobile</label>
+          <br />
+          <input
+            type="text"
+            id="mobile"
+            name="mobile"
+            className="inputbox"
+            {...register("mobile", {
+              required: {
+                value: true,
+                message: "Mobile number is required",
+              },
+              pattern: {
+                value: /^\d{10}$/,
+                message: "Invalid mobile address",
+              },
+            })}
+            placeholder="Enter your mobile"
+            maxLength={10}
+          />
+          <p>{errors.mobile?.message}</p>
           <label>Password</label>
           <br />
           <input
